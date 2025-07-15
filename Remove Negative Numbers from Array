@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int matrix[100];      // مصفوفة لإدخال الأرقام الأصلية
+    int nowmatrix[100];   // مصفوفة غير مستخدمة هنا (يمكن حذفها)
+    int number, numbers, index = 0;
+
+    cout << " enter number";
+    cin >> number;
+
+    // إدخال عناصر المصفوفة من المستخدم
+    for (int i = 0; i < number; i++) {
+        cout << "enter numbers";
+        cin >> numbers;
+        matrix[i] = numbers;
+    }
+
+    // حذف الأعداد السالبة من المصفوفة
+    for (int i = 0; i < number; i++) {
+        if (matrix[i] >= 0) {
+            matrix[index] = matrix[i];  // الاحتفاظ بالأرقام الموجبة فقط
+            index++;                    // زيادة المؤشر لمكان النسخ التالي
+        }
+    }
+
+    // طباعة العناصر بعد الحذف
+    for (int j = 0; j < index; j++) {
+        cout << matrix[j] << "   ";
+    }
+
+    return 0;
+}
