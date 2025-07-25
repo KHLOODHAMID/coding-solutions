@@ -1,0 +1,49 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int matrix[100];   
+    int temp[100];      
+    int number, numbers, index = 0, countr = 0, uniquee;
+
+    cout << " enter number";   // عدد القيم التي سيدخلها المستخدم
+    cin >> number;
+
+    // إدخال الأرقام وتخزينها في المصفوفة الأصلية
+    for (int i = 0; i < number; i++) {
+        cout << "enter numbers";
+        cin >> numbers;
+        matrix[i] = numbers;
+    }
+
+    // البحث عن الأرقام الفريدة
+    for (int i = 0; i < number; i++) {
+        countr = 0;
+        uniquee = matrix[i];
+
+        // نحسب كم مرة تكررت القيمة الحالية في المصفوفة
+        for (int j = 0; j < number; j++) {
+            if (matrix[j] == matrix[i]) {
+                countr++;
+            }
+        }
+
+        // إذا تكررت مرة واحدة فقط، نعتبرها فريدة ونخزنها
+        if (countr == 1) {
+            temp[index] = uniquee;
+            index++;
+        }
+    }
+
+    // نقل الأرقام الفريدة من المصفوفة المؤقتة إلى المصفوفة الأصلية
+    for (int k = 0; k < index; k++) {
+        matrix[k] = temp[k];
+    }
+
+    // طباعة الأرقام الفريدة
+    for (int k = 0; k < index; k++) {
+        cout << "   " << matrix[k];
+    }
+
+    return 0;
+}
