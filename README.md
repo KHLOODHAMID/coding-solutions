@@ -40,11 +40,11 @@ This repository contains a collection of my programming practice solutions and s
 
 ---
 
-## 📌 Notes
+Feel free to connect or collaborate!  
+You can reach me via [GitHub](https://github.com/KHLOODHAMID) .
 
-This repository will be updated regularly as I continue to learn and explore new topics. All solutions here are written by me for educational purposes.
+Thank you for visiting! 🌱
 
----
 
 ## 📫 Contact
 
