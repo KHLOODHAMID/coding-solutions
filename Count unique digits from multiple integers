@@ -1,0 +1,32 @@
+#include <iostream>          
+using namespace std;           
+
+int main() {               
+
+    bool mat[10] = { false }; // مصفوفة لتتبع الأرقام من 0 إلى 9، كلها false بالبداية
+                              // إذا ظهر رقم معين (مثل 3)، نحط mat[3] = true
+
+    int number, numberar, l = 0; 
+    cout << "Enter size of array:\n"; 
+    cin >> numberar;                 
+
+    for (int i = 0; i < numberar; i++) {  
+        cout << "Enter a number:\n";     
+        cin >> number;                  
+
+        while (number > 0) {              // طالما الرقم فيه خانات (digits)
+            mat[number % 10] = true;      // استخراج آخر رقم ووضعه في المصفوفة كـ true (يعني الرقم هذا ظهر)
+            number = number / 10;         // إزالة آخر رقم (نقسم على 10)
+        }
+    }
+
+    for (int j = 0; j < 10; j++) {        // حلقة تمر على كل الأرقام من 0 إلى 9
+        if (mat[j]) {                     // إذا mat[j] كانت true، معناها هذا الرقم ظهر
+            l++;                          // نزيد العداد l
+        }
+    }
+
+    cout << l;                         
+
+    return 0;                       
+}
